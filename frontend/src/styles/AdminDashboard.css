@@ -1,0 +1,22 @@
+.dashboard-container{
+    display:flex;
+    gap:20px;
+    padding:30px;
+}
+
+.dashboard-card{
+    width:250px;
+    padding:25px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.dashboard-card h2{
+    color:#555;
+}
+
+.dashboard-card h1{
+    color:#2563eb;
+}

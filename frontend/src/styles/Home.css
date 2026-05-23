@@ -1,0 +1,154 @@
+.home-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+/* LEFT SIDEBAR */
+.filter-sidebar {
+    width: 220px;
+    min-height: 100vh;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.filter-sidebar h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #222;
+}
+
+.filter-sidebar span {
+    display: block;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #444;
+    transition: 0.2s ease;
+}
+
+.filter-sidebar span:hover {
+    color: #2874f0;
+    transform: translateX(4px);
+}
+
+
+/* RIGHT SECTION */
+.products-section {
+    flex: 1;
+     display:flex;
+    flex-direction:column;
+}
+
+
+/* PRODUCTS GRID */
+.products-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+
+/* PRODUCT LINK */
+.product-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* PRODUCT CARD */
+.product-card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    transition: 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+}
+
+
+/* IMAGE */
+.image-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* INFO */
+.product-info {
+    padding: 15px;
+}
+
+.product-name {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-brand {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+/* BUTTON */
+.view-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #2874f0;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.view-btn:hover {
+    background-color: #0f5bd3;
+}
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:30px 0;
+}
+
+.pagination button{
+    padding:10px 15px;
+    border:none;
+    background:#e2e8f0;
+    cursor:pointer;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.pagination button:hover{
+    background:#2563eb;
+    color:white;
+}
+
+.active-page{
+    background:#2563eb !important;
+    color:white;
+}

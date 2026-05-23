@@ -1,0 +1,62 @@
+.admin-products-container {
+    padding: 30px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.add-product-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.products-table th,
+.products-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.products-table th {
+    background: #f8fafc;
+}
+
+.table-image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.edit-btn {
+    padding: 8px 12px;
+    border: none;
+    background: #22c55e;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.delete-btn {
+    padding: 8px 12px;
+    border: none;
+    background: #ef4444;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
