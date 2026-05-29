@@ -3,13 +3,13 @@ import { CartContext } from "../context/CartContext";
 import "../styles/Checkout.css";
 import { createOrder } from "../services/api";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+// import { AuthContext } from "../context/AuthContext";
 
 
 function Checkout() {
 
     const { cartItems ,ClearCart} = useContext(CartContext);
-    const { customer } = useContext(AuthContext);
+    // const { customer } = useContext(AuthContext);
     const navigate = useNavigate();
 
 
