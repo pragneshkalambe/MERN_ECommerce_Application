@@ -25,7 +25,7 @@ function Checkout() {
 
             // create razorpay order
             const response = await fetch(
-                "http://localhost:5000/api/payment/create-order",
+                "https://mern-ecommerce-application-t0c8.onrender.com/api/payment/create-order",
                 {
                     method: "POST",
                     headers: {
@@ -154,7 +154,7 @@ function Checkout() {
                         >
 
                             <img
-                                src={`http://localhost:5000/${item.images?.[0]}`}
+                                src={`https://mern-ecommerce-application-t0c8.onrender.com/${item.images?.[0]}`}
                                 alt={item.name}
                                 className="checkout-image"
                             />

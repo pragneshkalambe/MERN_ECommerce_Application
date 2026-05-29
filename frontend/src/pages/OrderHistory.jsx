@@ -85,7 +85,7 @@ function OrderHistory() {
                                     >
 
                                         <img
-                                            src={`http://localhost:5000/${product.image}`}
+                                            src={`https://mern-ecommerce-application-t0c8.onrender.com/${product.image}`}
                                             alt={product.name}
                                             className="product-image"
                                         />

@@ -53,7 +53,7 @@ function Home() {
 
                                 <div className="image-container">
                                     <img
-                                        src={`http://localhost:5000/${product.images[0]}`}
+                                        src={`https://mern-ecommerce-application-t0c8.onrender.com/${product.images[0]}`}
                                         alt={product.name}
                                         className="product-image"
                                     />
@@ -135,7 +135,7 @@ function Home() {
                                         <div className="image-container">
 
                                             <img
-                                                src={`http://localhost:5000/${product.images?.[0]}`}
+                                                src={`https://mern-ecommerce-application-t0c8.onrender.com/${product.images?.[0]}`}
                                                 alt={product.name}
                                                 className="product-image"
                                             />

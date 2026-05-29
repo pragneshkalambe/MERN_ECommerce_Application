@@ -38,7 +38,7 @@ function Cart() {
                                 >
 
                                     <img
-                                        src={`http://localhost:5000/${item.images?.[0]}`}
+                                        src={`https://mern-ecommerce-application-t0c8.onrender.com/${item.images?.[0]}`}
                                         alt={item.name}
                                         className="cart-image"
                                     />
