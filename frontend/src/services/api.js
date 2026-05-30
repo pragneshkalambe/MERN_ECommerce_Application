@@ -189,7 +189,5 @@ export const createProduct = async (formData) => {
             "error creating product:",
             error.message
         );
-
     }
-
 };

@@ -13,6 +13,8 @@ import productRoutes from "./routes/productRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import adminRoutes
 from "./routes/adminRoutes.js";
+import fs from "fs";
+
 
 const app = express();
 
@@ -25,6 +27,9 @@ app.use(express.json());
 // serve uploaded images
 app.use("/uploads", express.static("uploads"));
 
+if (!fs.existsSync("uploads")) {
+    fs.mkdirSync("uploads");
+}
 
 // routes
 app.use("/api/products", productRoutes);
