@@ -25,8 +25,14 @@ app.use(cors());
 app.use(express.json());
 
 
+console.log("Current working directory:", process.cwd());
+console.log("Upload directory path:", uploadDir);
+
 if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir);
+    fs.mkdirSync(uploadDir, { recursive: true });
+    console.log("Created uploads directory:", uploadDir);
+} else {
+    console.log("Uploads directory already exists:", uploadDir);
 }
 // serve uploaded images
 // app.use("/uploads", express.static("uploads"));
