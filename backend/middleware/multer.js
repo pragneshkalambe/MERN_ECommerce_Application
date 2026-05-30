@@ -2,6 +2,10 @@ import multer from "multer";
 import path from "path";
 
 const uploadDir = path.join(process.cwd(), "uploads");
+
+console.log("STARTUP TEST");
+console.log("Current working directory:", process.cwd());
+console.log("Upload directory path:", uploadDir);
 // storage
 const storage = multer.diskStorage({
 
