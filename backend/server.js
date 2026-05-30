@@ -14,8 +14,9 @@ import authRoutes from "./routes/authRoutes.js";
 import adminRoutes
 from "./routes/adminRoutes.js";
 import fs from "fs";
+import path from "path";
 
-
+const uploadDir = path.join(process.cwd(), "uploads");
 const app = express();
 
 
@@ -24,12 +25,15 @@ app.use(cors());
 app.use(express.json());
 
 
-// serve uploaded images
-app.use("/uploads", express.static("uploads"));
-
-if (!fs.existsSync("uploads")) {
-    fs.mkdirSync("uploads");
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
 }
+// serve uploaded images
+// app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(uploadDir));
+
+
+
 
 // routes
 app.use("/api/products", productRoutes);
