@@ -1,16 +1,23 @@
 import Product from "../models/Product.js";
+import { uploadToCloudinary } from "../middleware/cloudinary.js";
 
+
+// then save imageUrls array into your product document
 
 // CREATE PRODUCT
 const createProduct = async (req, res) => {
 
     try {
 
-        let imagePaths = [];
+        
+        const uploadPromises = req.files.map(file => uploadToCloudinary(file.buffer));
+        const uploadResults = await Promise.all(uploadPromises);
+        const imageUrls = uploadResults.map(result => result.secure_url);
+        // let imagePaths = [];
 
-        if (req.files && req.files.length > 0) {
-            imagePaths = req.files.map(file => file.path);
-        }
+        // if (req.files && req.files.length > 0) {
+        //     imagePaths = req.files.map(file => file.path);
+        // }
 
         console.log("body data:", req.body);
 
@@ -22,7 +29,7 @@ const createProduct = async (req, res) => {
             description: req.body.description,
             brand: req.body.brand,
             cellularData: req.body.cellularData,
-            images: imagePaths
+            images: imageUrls
 
         }).save();
 
@@ -107,7 +114,7 @@ const getProducts = async (req, res) => {
         let category = req.query.category;
         console.log(category);
         if (category) {
-            let prodByCategory = await Product.find({category : category});
+            let prodByCategory = await Product.find({ category: category });
             console.log(prodByCategory);
             return res.status(200).json(prodByCategory)
         };

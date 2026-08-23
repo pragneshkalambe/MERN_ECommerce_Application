@@ -5,58 +5,29 @@ dotenv.config();
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import paymentRoutes
-from "./routes/paymentRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
-
 import productRoutes from "./routes/productRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
-import adminRoutes
-from "./routes/adminRoutes.js";
-import fs from "fs";
-import path from "path";
+import adminRoutes from "./routes/adminRoutes.js";
 
-const uploadDir = path.join(process.cwd(), "uploads");
 const app = express();
-
 
 // middleware
 app.use(cors());
 app.use(express.json());
 
-
-console.log("Current working directory:", process.cwd());
-console.log("Upload directory path:", uploadDir);
-
-if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
-    console.log("Created uploads directory:", uploadDir);
-} else {
-    console.log("Uploads directory already exists:", uploadDir);
-}
-// serve uploaded images
-// app.use("/uploads", express.static("uploads"));
-app.use("/uploads", express.static(uploadDir));
-
-
-
-
 // routes
 app.use("/api/products", productRoutes);
 app.use("/api/auth", authRoutes);
-app.use("/api/payment",paymentRoutes);
-app.use("/api/orders", orderRoutes);   
-app.use("/api/admin",adminRoutes);
+app.use("/api/payment", paymentRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/admin", adminRoutes);
 
 // connect database
 mongoose.connect(process.env.MONGO_CONNECT)
-    .then(() =>
-        console.log("MongoDB connected")
-    )
-    .catch(err =>
-        console.log(err.message)
-    );
-
+    .then(() => console.log("MongoDB connected"))
+    .catch(err => console.log(err.message));
 
 // server
 const port = 5000;

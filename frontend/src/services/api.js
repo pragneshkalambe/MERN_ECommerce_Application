@@ -4,11 +4,15 @@ export const getProducts = async (category) => {
 
         if (category) {
             let response = await fetch(`https://mern-ecommerce-application-t0c8.onrender.com/api/products?category=${category}`);
+            // let response = await fetch(`https://localhost:5000/api/products?category=${category}`);
+
             return response.json();
         }
         else {
 
             let response = await fetch("https://mern-ecommerce-application-t0c8.onrender.com/api/products/")
+            // let response = await fetch("https://localhost:5000/api/products/")
+
             return response.json();
         }
     } catch (error) {
@@ -21,6 +25,8 @@ export const getProducts = async (category) => {
 export const getProduct = async (id) => {
     try {
         let response = await fetch(`https://mern-ecommerce-application-t0c8.onrender.com/api/products/${id}`)
+        // let response = await fetch(`https://localhost:5000/api/products/${id}`)
+
         console.log("in getProduct api : ", response);
         return response.json();
     } catch (error) {
@@ -39,6 +45,8 @@ export const updateProduct = async (
 
         const response = await fetch(
             `https://mern-ecommerce-application-t0c8.onrender.com/api/products/${id}`,
+            // `https://localhost:5000/api/products/${id}`,
+
             {
                 method: "PUT",
                 body: formData
@@ -69,6 +77,8 @@ export const updateProduct = async (
 export const searchByName = async (name) => {
     try {
         let response = await fetch(`https://mern-ecommerce-application-t0c8.onrender.com/api/products/search?name=${name}`);
+        // let response = await fetch(`https://localhost:5000/api/products/search?name=${name}`);
+
         let data = await response.json();
         console.log("in api :", data);
         return data;
@@ -81,6 +91,8 @@ export const deleteProduct = async (id) => {
 
     const response = await fetch(
         `https://mern-ecommerce-application-t0c8.onrender.com/api/products/${id}`,
+        // `https://localhost:5000/api/products/${id}`,
+
         {
             method: "DELETE"
         }
@@ -92,6 +104,8 @@ export const deleteProduct = async (id) => {
 export const signupCustomer = async (custData) => {
     try {
         const response = await fetch(`https://mern-ecommerce-application-t0c8.onrender.com/api/auth/signup`, {
+        // const response = await fetch(`https://localhost:5000/api/auth/signup`, {
+
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -109,6 +123,8 @@ export const signupCustomer = async (custData) => {
 export const loginCustomer = async (custData) => {
     try {
         const response = await fetch(`https://mern-ecommerce-application-t0c8.onrender.com/api/auth/login`, {
+        // const response = await fetch(`https://localhost:5000/api/auth/login`, {
+
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -125,6 +141,8 @@ export const loginCustomer = async (custData) => {
 export const createOrder = async (orderData) => {
    try {
     let response = await fetch("https://mern-ecommerce-application-t0c8.onrender.com/api/orders",{
+    // let response = await fetch("https://localhost:5000/api/orders",{
+
         method : "POST",
         headers : {
             "Content-Type" : "application/json"
@@ -145,6 +163,8 @@ export const getCustomerOrders = async (customerId) => {
 
         const response = await fetch(
             `https://mern-ecommerce-application-t0c8.onrender.com/api/orders/${customerId}`
+            // `https://localhost:5000/api/orders/${customerId}`
+
         );
 
         return response.json();
@@ -164,6 +184,8 @@ export const getDashboardStats = async () => {
         const response =
             await fetch(
                 "https://mern-ecommerce-application-t0c8.onrender.com/api/admin/stats"
+                // "https://localhost:5000/api/admin/stats"
+
             );
 
         return response.json();
@@ -175,6 +197,8 @@ export const createProduct = async (formData) => {
 
         const response = await fetch(
             "https://mern-ecommerce-application-t0c8.onrender.com/api/products",
+            // "https://localhost:5000/api/products",
+
             {
                 method: "POST",
                 body: formData
