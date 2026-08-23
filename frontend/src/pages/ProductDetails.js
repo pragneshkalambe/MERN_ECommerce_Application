@@ -48,7 +48,8 @@ function ProductDetails() {
                                     <SwiperSlide key={image}>
 
                                         <img
-                                            src={`https://mern-ecommerce-application-t0c8.onrender.com/${image}`}
+                                            // src={`https://mern-ecommerce-application-t0c8.onrender.com/${image}`}
+                                            src={image}
                                             alt={product.name}
                                             className="details-image"
                                         />
