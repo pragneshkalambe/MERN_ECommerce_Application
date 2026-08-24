@@ -48,6 +48,8 @@ function AdminProducts() {
         }
 
     };
+
+    console.log("products:",products);
     return (
 
         <div className="admin-products-container">
@@ -95,7 +97,8 @@ function AdminProducts() {
 
                             <td>
                                 <img
-                                    src={`https://mern-ecommerce-application-t0c8.onrender.com/${product.images?.[0]}`}
+                                    // src={`https://mern-ecommerce-application-t0c8.onrender.com/${product.images?.[0]}`}
+                                    src={product.images?.[0]}
                                     alt={product.name}
                                     width="60"
                                 />

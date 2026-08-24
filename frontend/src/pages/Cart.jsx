@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Cart() {
 
     const { cartItems, RemoveFromCart,IncreaseQty,DecreaseQty } = useContext(CartContext);
-
+    console.log("cart items in adminproduct.jsx:",cartItems);
     const subtotal = cartItems.reduce(
         (acc, item) => acc + (item.price * item.quantity),
         0
@@ -38,7 +38,8 @@ function Cart() {
                                 >
 
                                     <img
-                                        src={`https://mern-ecommerce-application-t0c8.onrender.com/${item.images?.[0]}`}
+                                        // src={`https://mern-ecommerce-application-t0c8.onrender.com/${item.images?.[0]}`}
+                                        src={item.images?.[0]}
                                         alt={item.name}
                                         className="cart-image"
                                     />

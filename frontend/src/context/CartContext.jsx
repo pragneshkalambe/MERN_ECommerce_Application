@@ -95,6 +95,7 @@ function CartProvider({ children }) {
         // localStorage.removeItem("cart");
         setcartItems([]);
     }
+    console.log("cart items in context:",cartItems)
 
     let value = { cartItems, AddToCart, RemoveFromCart, IncreaseQty, DecreaseQty ,ClearCart};
     return (

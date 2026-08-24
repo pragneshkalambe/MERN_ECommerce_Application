@@ -39,7 +39,7 @@ function Checkout() {
 
             const order = await response.json();
 
-            console.log("order:", order);
+            console.log("order in checkout:", order);
 
             // razorpay options
             const options = {
@@ -154,7 +154,8 @@ function Checkout() {
                         >
 
                             <img
-                                src={`https://mern-ecommerce-application-t0c8.onrender.com/${item.images?.[0]}`}
+                                // src={`https://mern-ecommerce-application-t0c8.onrender.com/${item.images?.[0]}`}
+                                src={item.images?.[0]}
                                 alt={item.name}
                                 className="checkout-image"
                             />

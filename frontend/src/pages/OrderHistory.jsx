@@ -30,7 +30,7 @@ function OrderHistory() {
         setLoading(false);
 
     }, []);
-
+         console.log("orders data in order history:",orders);
     return (
 
         <div className="orders-container">
@@ -85,7 +85,8 @@ function OrderHistory() {
                                     >
 
                                         <img
-                                            src={`https://mern-ecommerce-application-t0c8.onrender.com/${product.image}`}
+                                            // src={`https://mern-ecommerce-application-t0c8.onrender.com/${product.image}`}
+                                            src={product.image}
                                             alt={product.name}
                                             className="product-image"
                                         />
